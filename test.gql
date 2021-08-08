@@ -1,0 +1,38 @@
+query getProductsVariants(
+$pageSize: Int,
+$cursor: String
+) {
+product {
+variants (first: $pageSize, after: $cursor) {
+edges {
+    node {
+        sku
+        entityId
+                }
+            }
+pageInfo {
+    hasNextPage
+    endCursor
+            }
+        }
+    }
+}
+
+{
+    "data": {
+        "product": {
+            "variants": (first: $pageSize, after: $cursor),
+                "edges": {
+                "node": [
+                    { "sku": "Something" },
+                    { "entityId": "1" }
+                ]
+                "pageInfo": [
+                    { "hasNextPage": "info" },
+                    { "endCursor ": "qweqwe" }
+
+                ]
+            }
+        }
+    }
+}

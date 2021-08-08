@@ -1,0 +1,27 @@
+const typeDefs = gql`
+  type Product {
+    id: Int
+    fname: String
+    age: Int
+    likes: Int
+    posts: [Post]
+  }
+
+  type Post {
+    id: Int
+    product: Product
+    body: String
+  }
+
+  type Query {
+    product(id: Int!): Product!
+    posts(id: Int!): Post!
+  }
+  type Mutation {
+    incrementLike(fname: String!) : [User!]
+  }
+
+  type Subscription {
+    listenLikes : [User]
+  }
+`;
