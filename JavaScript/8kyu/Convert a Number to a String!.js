@@ -12,3 +12,6 @@ function numberToString(num) {
 }
 
 // The same as Convert Boolean to a String - Kata
+// Extra
+
+console.log(numberToString());
